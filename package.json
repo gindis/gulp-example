@@ -1,0 +1,25 @@
+{
+  "name": "zhidier",
+  "description": "zhidier",
+  "version": "1.0.0",
+  "author": {
+    "name": "gindis",
+    "email": "gindis.wx@gmail.com"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "del": "^0.1.3",
+    "event-stream": "^3.1.7",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^1.0.0",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.0",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-minify-css": "^0.3.8",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sourcemaps": "^1.1.5",
+    "gulp-uglify": "^1.0.1"
+  }
+}
