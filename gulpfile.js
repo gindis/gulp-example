@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
+var rename = require('gulp-rename');
 var del = require('del');
 var es = require('event-stream');
 
@@ -44,6 +45,9 @@ gulp.task('minify-css', ['prefix'], function(){
   return gulp.src(paths.cssRoot)
     //.pipe(sourcemaps.init())
     .pipe(minify())
+    .pipe(rename({
+      suffix: '-min'
+    }))
     //.pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.build));
 });
@@ -58,6 +62,9 @@ gulp.task('scripts', ['coffee-to-js'], function() {
   return gulp.src(paths.scripts)
     //.pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(rename({
+      suffix: '-min'
+    }))
     //.pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.build));
 });
@@ -81,6 +88,3 @@ gulp.task('dev', ['watch', 'prefix', 'coffee-to-js']);
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['watch', 'clean', 'minify-css', 'scripts', 'images']);
-
-
-
